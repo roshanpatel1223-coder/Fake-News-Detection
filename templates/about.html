@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block title %}About — SatyaCheck{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="page-hero-content">
+    <span class="section-eyebrow">The Project</span>
+    <h1>About <span class="accent">SatyaCheck</span></h1>
+    <p>A deep dive into India's fake news crisis and how AI can help fight it.</p>
+  </div>
+</section>
+
+<section class="section about-section">
+  <div class="section-container">
+
+    <!-- Problem Statement -->
+    <div class="about-block glass reveal">
+      <div class="about-icon"><i class="fas fa-exclamation-triangle"></i></div>
+      <div class="about-content">
+        <h2>The Problem: India's <span class="accent">Misinformation</span> Crisis</h2>
+        <p>India is one of the world's largest consumers of social media, with over 500 million WhatsApp users. This scale, combined with low media literacy in some demographics, creates a fertile ground for misinformation to spread.</p>
+        <p>From election-time propaganda to health misinformation during COVID-19, fake news has caused real-world harm — including mob violence, communal tensions, and public health crises.</p>
+        <div class="stat-row">
+          <div class="about-stat">
+            <span>500M+</span>
+            <p>WhatsApp users in India</p>
+          </div>
+          <div class="about-stat">
+            <span>#1</span>
+            <p>Country for fake news spread (Reuters Institute)</p>
+          </div>
+          <div class="about-stat">
+            <span>56%</span>
+            <p>Indians can't distinguish satire from news</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solution -->
+    <div class="about-block glass reveal" data-delay="100">
+      <div class="about-icon" style="color:var(--neon-green)"><i class="fas fa-lightbulb"></i></div>
+      <div class="about-content">
+        <h2>Our <span class="accent">Solution</span></h2>
+        <p>SatyaCheck is an AI-powered fake news detection system trained specifically on Indian news patterns. It combines classical Machine Learning with modern NLP to deliver fast, accurate verdicts on news content.</p>
+        <p>The system uses TF-IDF vectorisation with n-gram analysis (1–3 grams) to capture contextual patterns, followed by a Logistic Regression classifier trained on India-specific real and fake news corpora.</p>
+      </div>
+    </div>
+
+    <!-- NLP Pipeline -->
+    <div class="pipeline-visual glass reveal">
+      <h3><i class="fas fa-sitemap"></i> NLP Pipeline Architecture</h3>
+      <div class="pipeline-steps">
+        <div class="pipe-step">
+          <div class="pipe-icon"><i class="fas fa-file-text"></i></div>
+          <span>Raw Text</span>
+        </div>
+        <div class="pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="pipe-step">
+          <div class="pipe-icon"><i class="fas fa-text-height"></i></div>
+          <span>Lowercase</span>
+        </div>
+        <div class="pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="pipe-step">
+          <div class="pipe-icon"><i class="fas fa-link-slash"></i></div>
+          <span>Remove URLs/HTML</span>
+        </div>
+        <div class="pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="pipe-step">
+          <div class="pipe-icon"><i class="fas fa-filter"></i></div>
+          <span>Stopword Removal</span>
+        </div>
+        <div class="pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="pipe-step">
+          <div class="pipe-icon"><i class="fas fa-scissors"></i></div>
+          <span>Stemming</span>
+        </div>
+        <div class="pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="pipe-step">
+          <div class="pipe-icon"><i class="fas fa-table"></i></div>
+          <span>TF-IDF</span>
+        </div>
+        <div class="pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="pipe-step">
+          <div class="pipe-icon"><i class="fas fa-robot"></i></div>
+          <span>LR Classifier</span>
+        </div>
+        <div class="pipe-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="pipe-step active-pipe">
+          <div class="pipe-icon"><i class="fas fa-verdict"></i><i class="fas fa-check-circle"></i></div>
+          <span>Verdict</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Future Work -->
+    <div class="about-block glass reveal">
+      <div class="about-icon" style="color:var(--neon-blue)"><i class="fas fa-rocket"></i></div>
+      <div class="about-content">
+        <h2>Future <span class="accent">Roadmap</span></h2>
+        <p>SatyaCheck v2 will include:</p>
+        <ul class="roadmap-list">
+          <li><i class="fas fa-check-circle" style="color:var(--neon-green)"></i> BERT / IndicBERT multilingual model for Hindi, Tamil, Telugu</li>
+          <li><i class="fas fa-check-circle" style="color:var(--neon-green)"></i> Real-time fact-checking via external knowledge bases</li>
+          <li><i class="fas fa-check-circle" style="color:var(--neon-green)"></i> WhatsApp API integration for automated checking</li>
+          <li><i class="fas fa-check-circle" style="color:var(--neon-green)"></i> Source credibility scoring alongside content analysis</li>
+          <li><i class="fas fa-clock" style="color:#f59e0b"></i> Browser extension for inline news fact-checking</li>
+          <li><i class="fas fa-clock" style="color:#f59e0b"></i> Image and video deepfake detection module</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Team/Credits -->
+    <div class="about-block glass reveal">
+      <div class="about-icon" style="color:var(--neon-pink)"><i class="fas fa-code"></i></div>
+      <div class="about-content">
+        <h2>Built With <span class="accent">Open Source</span></h2>
+        <p>SatyaCheck stands on the shoulders of giants. We use Python, scikit-learn, NLTK, Flask, and Chart.js — all open-source tools that power the global AI community.</p>
+        <p>This project is designed as a contribution to India's growing AI-for-social-good ecosystem.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

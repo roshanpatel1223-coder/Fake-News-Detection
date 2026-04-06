@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% block title %}SatyaCheck — AI Fake News Detector for India{% endblock %}
+
+{% block content %}
+
+<!-- ════════════════════════════════════
+     HERO SECTION
+═════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-robot"></i>
+      <span>AI-Powered · India-Focused · NLP-Driven</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="typing-text" id="heroTyping"></span>
+      <br />
+      <span class="hero-sub-title">in <span class="accent">Seconds</span></span>
+    </h1>
+    <p class="hero-desc">
+      SatyaCheck uses advanced Natural Language Processing to detect fake news
+      circulating in Indian media — WhatsApp forwards, news portals, and social media.
+      Cut through the noise. Trust verified facts.
+    </p>
+    <div class="hero-actions">
+      <a href="/detect" class="btn-primary">
+        <i class="fas fa-magnifying-glass-chart"></i>
+        Analyse Article
+      </a>
+      <a href="/about" class="btn-ghost">
+        <i class="fas fa-play-circle"></i>
+        How It Works
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" data-target="94.5">0</span><span>%</span>
+        <span class="stat-label">Accuracy</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="97">0</span><span>%</span>
+        <span class="stat-label">ROC-AUC</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="15000">0</span><span>+</span>
+        <span class="stat-label">Features</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="news-card-stack">
+      <div class="fake-card card-float">
+        <span class="card-tag fake-tag"><i class="fas fa-circle-xmark"></i> FAKE</span>
+        <p>"SHOCKING: Govt secretly banning WhatsApp from midnight tonight!"</p>
+      </div>
+      <div class="real-card card-float-delay">
+        <span class="card-tag real-tag"><i class="fas fa-circle-check"></i> REAL</span>
+        <p>"RBI keeps repo rate unchanged at 6.5% amid inflation concerns."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     HOW IT WORKS SECTION
+═════════════════════════════════════ -->
+<section class="section how-it-works" id="how">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">The Process</span>
+      <h2 class="section-title">How <span class="accent">SatyaCheck</span> Works</h2>
+      <p class="section-desc">Three-step pipeline powered by NLP and Machine Learning</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card glass reveal" data-delay="0">
+        <div class="step-num">01</div>
+        <div class="step-icon"><i class="fas fa-file-lines"></i></div>
+        <h3>Text Input</h3>
+        <p>Paste any news headline, article excerpt, or WhatsApp forward. SatyaCheck accepts text in English and transliterated Hindi.</p>
+      </div>
+      <div class="step-card glass reveal" data-delay="150">
+        <div class="step-num">02</div>
+        <div class="step-icon"><i class="fas fa-brain"></i></div>
+        <h3>NLP Processing</h3>
+        <p>The text undergoes tokenisation, stopword removal, and stemming. TF-IDF transforms it into a 15,000-feature vector space.</p>
+      </div>
+      <div class="step-card glass reveal" data-delay="300">
+        <div class="step-num">03</div>
+        <div class="step-icon"><i class="fas fa-bolt"></i></div>
+        <h3>AI Verdict</h3>
+        <p>Logistic Regression with saga solver classifies the article as FAKE or REAL with confidence score and signal analysis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     FEATURES SECTION
+═════════════════════════════════════ -->
+<section class="section features" id="features">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Why SatyaCheck</span>
+      <h2 class="section-title">Built for <span class="accent">Indian</span> Context</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card glass reveal" data-delay="0">
+        <i class="fas fa-flag feature-icon"></i>
+        <h4>India-Specific Corpus</h4>
+        <p>Trained on Indian political, cultural, and social news patterns including WhatsApp misinformation trends.</p>
+      </div>
+      <div class="feature-card glass reveal" data-delay="100">
+        <i class="fas fa-language feature-icon"></i>
+        <h4>Multi-Pattern NLP</h4>
+        <p>Unigram, bigram, and trigram analysis captures contextual patterns unique to Indian fake news propagation.</p>
+      </div>
+      <div class="feature-card glass reveal" data-delay="200">
+        <i class="fas fa-signal feature-icon"></i>
+        <h4>Signal Detection</h4>
+        <p>Identifies red flags like excessive caps, clickbait phrases, conspiracy keywords, and emotional manipulation.</p>
+      </div>
+      <div class="feature-card glass reveal" data-delay="300">
+        <i class="fas fa-chart-pie feature-icon"></i>
+        <h4>Confidence Scoring</h4>
+        <p>Returns probability scores for both classes — not just a binary verdict, giving nuanced insight into borderline cases.</p>
+      </div>
+      <div class="feature-card glass reveal" data-delay="400">
+        <i class="fas fa-shield-halved feature-icon"></i>
+        <h4>Privacy First</h4>
+        <p>No text is stored permanently. Analysis is ephemeral — your content stays private after the session ends.</p>
+      </div>
+      <div class="feature-card glass reveal" data-delay="500">
+        <i class="fas fa-code feature-icon"></i>
+        <h4>Open Architecture</h4>
+        <p>Designed to be extended with BERT, multilingual models, or real-time RSS feed integration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     CTA SECTION
+═════════════════════════════════════ -->
+<section class="section cta-section">
+  <div class="cta-inner glass reveal">
+    <div class="cta-glow"></div>
+    <h2>Don't Let Fake News <span class="accent">Mislead</span> You</h2>
+    <p>Verify any article, forward, or claim in under 2 seconds with SatyaCheck's AI engine.</p>
+    <a href="/detect" class="btn-primary btn-lg">
+      <i class="fas fa-magnifying-glass-chart"></i>
+      Start Checking Now
+    </a>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}
